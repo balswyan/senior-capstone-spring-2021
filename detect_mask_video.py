@@ -102,11 +102,21 @@ while True:
 		(mask, withoutMask) = pred
 
 		# determine the class label and color we'll use to draw
-		# the bounding box and text
-		label = "Mask" if mask > withoutMask else "No Mask" 
-        #Weongwear = "Wrong wear" if mask < 0.4 & withoutMask >0.4
+		# the bounding box and text #label = "Mask" if mask > withoutMask else "No Mask"
+       
+		if mask >= 0.95:
+        		label = "Mask" 
+        		color = (0, 255, 0)
+		if withoutMask > 0.95:
+        		label = "No Mask" 
+        		color = (0, 0, 255)
+		if mask < 0.95 and withoutMask <= 0.95 :
+        		label = "Weong Wear" 
+        		color = (0, 127, 255)                
+		#label = "Wrong Wear" if 0.6 < mask <0.9 else "No mask"        
+		#label = "No Mask" if withoutMask > 0.85 else "Wrong Wear" 
         
-		color = (0, 255, 0) if label == "Mask" else (0, 0, 255)
+		#color = (0, 255, 0) if label == "Mask" else (0, 127, 255)
 
 		# include the probability in the label
 		label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
