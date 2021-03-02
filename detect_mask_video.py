@@ -3,6 +3,7 @@ from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
 from imutils.video import VideoStream
+from playsound import playsound
 import numpy as np
 import imutils
 import time
@@ -102,17 +103,25 @@ while True:
 		(mask, withoutMask) = pred
 
 		# determine the class label and color we'll use to draw
-		# the bounding box and text #label = "Mask" if mask > withoutMask else "No Mask"
-       
+		# the bounding box and text #label = "Mask" if mask > withoutMask else "No Mask"     
 		if mask >= 0.95:
         		label = "Mask" 
-        		color = (0, 255, 0)
+        		color = (0, 255, 0)               
 		if withoutMask > 0.95:
         		label = "No Mask" 
-        		color = (0, 0, 255)
+        		color = (0, 0, 255)              
 		if mask < 0.95 and withoutMask <= 0.95 :
         		label = "Weong Wear" 
-        		color = (0, 127, 255)                
+        		color = (0, 127, 255)            
+		#if label == "Mask": 
+        		#playsound('Correct.wav')
+        		#print("I ran Correct")                
+		#if label == "No Mask":
+        		#playsound('NoMask.wav')
+        		#print("I ran NoMask")                
+		#if label == "Weong Wear":      
+        		#playsound('WeongWear.wav')
+        		#print("I ran Wrong")                
 		#label = "Wrong Wear" if 0.6 < mask <0.9 else "No mask"        
 		#label = "No Mask" if withoutMask > 0.85 else "Wrong Wear" 
         
