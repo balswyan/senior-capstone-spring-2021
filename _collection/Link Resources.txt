@@ -18,5 +18,13 @@ https://www.google.com/search?safe=strict&biw=1876&bih=940&sxsrf=ALeKk03dz3Y5IlI
 
 https://www.rapidtables.com/web/color/RGB_Color.html
 
-https://www.tutorialspoint.com/python3/python_basic_operators.htm
+https://www.tutorialspoint.com/python3/python_basic_operators.html
+
+https://www.youtube.com/watch?v=z0aOffHrTac
+https://realpython.com/playing-and-recording-sound-python/
+https://betterprogramming.pub/how-to-play-audio-files-in-python-3a430b6b2657
+https://www.pygame.org/docs/ref/mixer.html
+https://www.pygame.org/docs/ref/mixer.html#pygame.mixer.set_num_channels
+https://laptrinhx.com/quick-overview-what-is-ai-artificial-intelligence-ml-machine-learning-and-dl-deep-learning-2305946423/
+
 
