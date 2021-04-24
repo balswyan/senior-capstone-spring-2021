@@ -74,8 +74,8 @@ def detect_and_predict_mask(frame, faceNet, maskNet):
 	return (locs, preds)
 
 # load our serialized face detector model from disk
-prototxtPath = r"C:\Users\balsw\Desktop\Git\senior-capstone-spring-2021\face_detector\deploy.prototxt"
-weightsPath = r"C:\Users\balsw\Desktop\Git\senior-capstone-spring-2021\face_detector\res10_300x300_ssd_iter_140000.caffemodel"
+prototxtPath = r"C:\Users\balsw\Desktop\Git\senior-capstone-spring-2021\CAFFE_DNN_FACE_DETECTOR\deploy.prototxt"
+weightsPath = r"C:\Users\balsw\Desktop\Git\senior-capstone-spring-2021\CAFFE_DNN_FACE_DETECTOR\res10_300x300_ssd_iter_140000.caffemodel"
 faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
 
 # load the face mask detector model from disk
@@ -114,15 +114,15 @@ while True:
 		if mask < 0.95 and withoutMask <= 0.95 :
         		label = "Weong Wear" 
         		color = (0, 127, 255)            
-		#if label == "Mask": 
-        		#playsound('Correct.wav')
-        		#print("I ran Correct")                
-		#if label == "No Mask":
-        		#playsound('NoMask.wav')
-        		#print("I ran NoMask")                
-		#if label == "Weong Wear":      
-        		#playsound('WeongWear.wav')
-        		#print("I ran Wrong")                
+		if label == "Mask": 
+        		playsound('1.wav')
+        		print("I ran Correct")                
+		if label == "No Mask":
+        		playsound('3.wav')
+        		print("I ran NoMask")                
+		if label == "Weong Wear":      
+        		playsound('2.wav')
+        		print("I ran Wrong")                
 		#label = "Wrong Wear" if 0.6 < mask <0.9 else "No mask"        
 		#label = "No Mask" if withoutMask > 0.85 else "Wrong Wear" 
         
